@@ -9,7 +9,7 @@ export function Card({ title, description, icon }: cardPorps) {
     return (
 
         <div className="
-        bg-violet-400    
+        bg-violet-200 
         p-6 rounded-xl 
         hover:shadow-md transition duration-300"
         >

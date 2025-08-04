@@ -1,5 +1,6 @@
 import { Card } from "@/components/Card";
 import NavBar from "@/components/NavBar";
+import PlaceForm from "@/components/PlaceForm";
 
 
 
@@ -11,7 +12,7 @@ export default function Home() {
       <NavBar links={
         [
           { label: 'Inicio', href: '/' },
-          { label: 'Sobre Nós', href: '/about' },
+          { label: 'Mapa', href: '/map' },
           { label: 'Produtos', href: '/product' }
         ]
       } />
@@ -40,6 +41,10 @@ export default function Home() {
         </div>
 
       </section>
+
+      {/* <div className="flex justify-center">
+        <PlaceForm lat={22} lng={-23}/>
+      </div> */}
 
 
     </div>

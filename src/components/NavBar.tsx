@@ -10,19 +10,18 @@ interface NavBarProps {
 
 export default function NavBar({links}:NavBarProps) {
     return (
-        <nav className="bg-violet-400 shadow-sm">
+        <nav className="bg-amber-50 shadow-sm">
             <div className="px-4">
                 <div className="flex justify-between h-16 items-center">
 
                     {/* Logo */}
                     <div className="flex items-center">
                         <Image
-                            src="/nextjs-icon.svg"
+                            src="/next.svg"
                             alt="logo nextjs"
-                            width={40}
-                            height={40}
+                            width={100}
+                            height={80}
                         />
-                        <span className="ml-2">NextApp</span>
                     </div>
 
                     {/* Links */}
