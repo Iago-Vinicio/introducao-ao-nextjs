@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: [
+      "cdn-icons-png.flaticon.com",    
+      "upload.wikimedia.org",             
+      "static.wikia.nocookie.net",      
+      "i.pinimg.com",   
+      'i.imgur.com'
+    ],
+  },
 };
 
 export default nextConfig;

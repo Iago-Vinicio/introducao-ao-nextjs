@@ -2,7 +2,7 @@ import  Card  from "@/components/Card";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-900 flex justify-center items-center p-8">
       <Card
         title="Card"
         description="Revisao React"

@@ -1,21 +1,29 @@
-type CardProps = {
-  title: string;
-  description: string;
-  imageUrl: string;
-};
+import Image from "next/image"
 
-export default function Card({ title, description, imageUrl }: CardProps) {
-  return (
-    <div className="relative bg-gradient-to-br from-blue-700 to-blue-900 p-1 rounded-2xl max-w-sm mx-3 transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl">
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10">
-        <img
-          src={imageUrl}
-          alt={title}
-          className="w-full h-48 object-cover rounded-xl mb-4 border border-white/20"
-        />
-        <h3 className="text-2xl font-bold text-white drop-shadow mb-2">{title}</h3>
-        <p className="text-gray-200 text-sm leading-relaxed">{description}</p>
-      </div>
-    </div>
-  );
+type CardProps = {
+    title: string
+    description: string
+    imageUrl: string
+    category: string
+}
+
+export default function Card({title, description, imageUrl, category} : CardProps) {
+    return (
+        <div className=" p-9 m-5 bg-blue-400 size-2/6 rounded-2xl transform transition duration-300 hover:scale-110 hover:bg-blue-500 cursor-pointer">
+            <div className="mb-4"> 
+                <Image 
+                alt="image"
+                src={imageUrl}
+                width={50}
+                height={50}/>
+            </div>
+
+            <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+                {category}
+            </span>
+
+            <h2 className="text-2xl font-bold">{title}</h2>                
+            <p className="font-extralight">{description}</p>
+        </div>
+    )
 }
