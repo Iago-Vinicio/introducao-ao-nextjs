@@ -1,25 +1,21 @@
+type CardProps = {
+  title: string;
+  description: string;
+  imageUrl: string;
+};
 
-interface cardPorps {
-    title: string,
-    description: string,
-    icon: string
-}
-
-export function Card({ title, description, icon }: cardPorps) {
-    return (
-
-        <div className="
-        bg-violet-200 
-        p-6 rounded-xl 
-        hover:shadow-md transition duration-300"
-        >
-            <div className="text-4xl mb-4">{icon}</div>
-            <h3 className="
-            text-xl font-semibold text-gray-800 mb-2">
-                {title}
-            </h3>
-            <p className="text-gray-600">{description}</p>
-
-        </div>
-    )
+export default function Card({ title, description, imageUrl }: CardProps) {
+  return (
+    <div className="relative bg-gradient-to-br from-blue-700 to-blue-900 p-1 rounded-2xl max-w-sm mx-3 transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-48 object-cover rounded-xl mb-4 border border-white/20"
+        />
+        <h3 className="text-2xl font-bold text-white drop-shadow mb-2">{title}</h3>
+        <p className="text-gray-200 text-sm leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
 }
