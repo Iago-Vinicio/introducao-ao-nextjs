@@ -13,18 +13,26 @@ interface CommentListProps {
 
 export default function CommentList({ comments }: CommentListProps) {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 border border-gray-200">
-      <h2 className="text-lg font-semibold mb-4 text-gray-700">Comentarios</h2>
+    <div className="space-y-3">
+      <h2 className="text-lg font-medium text-gray-800 mb-2">
+        Comentários
+      </h2>
       {comments.length === 0 ? (
-        <p className="text-gray-500 italic">Nenhum comentário ainda.</p>
+        <p className="text-gray-500 text-sm italic">
+          Nenhum comentário ainda. Seja o primeiro.
+        </p>
       ) : (
         comments.map((comment) => (
-          <Comment
-            key={comment.id}
-            name={comment.name}
-            message={comment.message}
-            date={comment.date}
-          />
+          <div
+             className="hover:scale-[1.02] transition-all duration-200"
+             key={comment.id}
+          >
+            <Comment
+              name={comment.name}
+              message={comment.message}
+              date={comment.date}
+            />
+          </div>
         ))
       )}
     </div>

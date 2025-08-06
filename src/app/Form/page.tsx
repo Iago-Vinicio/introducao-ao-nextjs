@@ -12,14 +12,15 @@ interface Comment {
 
 export default function Page() {
   const [comments, setComments] = useState<Comment[]>([]);
+
   const addComment = (comment: Comment) => {
     setComments([comment, ...comments]);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-10 px-4">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8 text-blue-700">
+    <div className="min-h-screen bg-gray-50 py-10 px-4">
+      <div className="max-w-xl mx-auto">
+        <h1 className="text-3xl font-semibold text-center text-blue-700 mb-8">
           Atividade Componentes pt.3
         </h1>
         <CommentForm onAddComment={addComment} />

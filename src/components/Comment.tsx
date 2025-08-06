@@ -6,10 +6,12 @@ interface CommentProps {
 
 export default function Comment({ name, message, date }: CommentProps) {
   return (
-    <div className="bg-gray-50 border border-gray-200 shadow-sm rounded-lg p-4 mb-3">
-      <p className="font-semibold text-blue-700">{name}</p>
-      <p className="text-gray-700 my-2">{message}</p>
-      <span className="text-gray-500 text-sm">{date}</span>
+    <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-sm">
+      <div className="flex justify-between items-center mb-1">
+        <p className="font-medium text-blue-700">{name}</p>
+        <span className="text-xs text-gray-500">{date}</span>
+      </div>
+      <p className="text-gray-500 text-sm">{message}</p>
     </div>
   );
 }
