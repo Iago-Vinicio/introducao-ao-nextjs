@@ -14,10 +14,23 @@ interface CommentFormProps {
 export default function CommentForm({ onAddComment }: CommentFormProps) {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const [nameError, setNameError] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!name || !message) return;
+
+    if (!name.trim()) {
+      setNameError("Por favor, digite seu nome.");
+      return;
+    }
+
+    const regex = /^[A-Za-zÀ-ÿ\s]+$/;
+    if (!regex.test(name)) {
+      setNameError("Digite apenas letras.");
+      return;
+    }
+
+    if (!message.trim()) return;
 
     const newComment: Comment = {
       id: Date.now(),
@@ -29,35 +42,54 @@ export default function CommentForm({ onAddComment }: CommentFormProps) {
     onAddComment(newComment);
     setName("");
     setMessage("");
+    setNameError("");
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
-      className="bg-white shadow-md rounded-lg p-6 mb-6 border border-gray-200"
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm mb-6"
     >
-      <h2 className="text-lg font-semibold mb-4 text-gray-700">Adicionar Comentário</h2>
-      <div className="mb-3">
+      <h2 className="text-lg font-medium text-blue-700 mb-4">
+        Deixe seu comentário
+      </h2>
+
+      <div className="mb-4">
         <input
           type="text"
           placeholder="Seu nome"
           value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+          onChange={(e) => {
+            const value = e.target.value;
+            const formatted =
+              value.charAt(0).toUpperCase() + value.slice(1);
+            setName(formatted);
+            setNameError("");
+          }}
+          className={`border rounded-lg p-2 w-full focus:ring-2 focus:outline-none hover:scale-[1.02] transition-all duration-200 ${
+            nameError
+              ? "border-red-500 focus:ring-red-400"
+              : "border-gray-300 focus:ring-blue-400"
+          }`}
         />
+        {nameError && (
+          <p className="text-red-500 text-xs mt-1">{nameError}</p>
+        )}
       </div>
-      <div className="mb-3">
+
+      <div className="mb-4">
         <textarea
-          placeholder="Sua mensagem"
+          placeholder="Digite sua mensagem..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={4}
-          className="border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+          className="border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-400 focus:outline-none hover:scale-[1.02] transition-all duration-200"
         />
       </div>
-      <button 
-        type="submit" 
-        className="bg-blue-700 hover:bg-blue-800 transition-colors text-white px-5 py-2 rounded-lg shadow"
+
+      <button
+        type="submit"
+        className="w-full bg-blue-700 text-white py-2 rounded-md text-sm hover:bg-blue-800 hover:scale-[1.02] transition-all duration-200"
       >
         Enviar
       </button>
