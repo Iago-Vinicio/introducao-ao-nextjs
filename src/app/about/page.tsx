@@ -1,4 +1,5 @@
 import Counter from "@/components/Counter"
+import EffectCounter from "@/components/EffectCounter"
 import NavBar from "@/components/NavBar"
 
 export default function About(){
@@ -9,7 +10,9 @@ export default function About(){
             <h1>Sobre nós</h1>
             <p>Informações sobre a empresa ...</p> */}
 
-            <Counter initial={0}/>
+            {/* <Counter initial={0}/> */}
+
+            <EffectCounter></EffectCounter>
         </div>
     )
 }
