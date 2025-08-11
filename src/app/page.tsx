@@ -13,7 +13,7 @@ export default function Home() {
         [
           { label: 'Inicio', href: '/' },
           { label: 'Mapa', href: '/map' },
-          { label: 'Produtos', href: '/product' }
+          { label: 'Sobre', href: '/about' }
         ]
       } />
 
