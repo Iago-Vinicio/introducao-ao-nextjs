@@ -38,7 +38,7 @@ export default function Lampada() {
       </div>
 
       <p className="mt-4 text-lg font-semibold">
-        {ligada ? "Lâmpada ligada" : "Lâmpada desligada"}
+        {ligada ? "Lâmpada desligada" : "Lâmpada ligada"}
       </p>
     </div>
   );
