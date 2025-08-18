@@ -1,5 +1,6 @@
 import Counter from "@/components/Counter"
 import EffectCounter from "@/components/EffectCounter"
+import MIniDisplay from "@/components/miniDisplay"
 import NavBar from "@/components/NavBar"
 
 export default function About(){
@@ -12,7 +13,8 @@ export default function About(){
 
             {/* <Counter initial={0}/> */}
 
-            <EffectCounter></EffectCounter>
+            {/* <EffectCounter></EffectCounter> */}
+            <MIniDisplay></MIniDisplay>
         </div>
     )
 }
