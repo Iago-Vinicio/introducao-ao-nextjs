@@ -1,3 +1,4 @@
+import ButtonLike from "@/components/ButtonLike"
 import Counter from "@/components/Counter"
 import EffectCounter from "@/components/EffectCounter"
 import MIniDisplay from "@/components/miniDisplay"
@@ -14,7 +15,8 @@ export default function About(){
             {/* <Counter initial={0}/> */}
 
             {/* <EffectCounter></EffectCounter> */}
-            <MIniDisplay></MIniDisplay>
+            {/* <MIniDisplay></MIniDisplay> */}
+            <ButtonLike></ButtonLike>
         </div>
     )
 }
