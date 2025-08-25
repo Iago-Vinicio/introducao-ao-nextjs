@@ -3,6 +3,8 @@ import Counter from "@/components/Counter"
 import EffectCounter from "@/components/EffectCounter"
 import MIniDisplay from "@/components/miniDisplay"
 import NavBar from "@/components/NavBar"
+import ButtonMusic from "@/components/Music"
+
 
 export default function About(){
 
@@ -16,7 +18,8 @@ export default function About(){
 
             {/* <EffectCounter></EffectCounter> */}
             {/* <MIniDisplay></MIniDisplay> */}
-            <ButtonLike></ButtonLike>
+            {/* <ButtonLike></ButtonLike> */}
+            <ButtonMusic></ButtonMusic>
         </div>
     )
 }
