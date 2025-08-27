@@ -4,22 +4,22 @@ import EffectCounter from "@/components/EffectCounter"
 import MIniDisplay from "@/components/miniDisplay"
 import NavBar from "@/components/NavBar"
 import ButtonMusic from "@/components/Music"
+import ListaDeCompras from "@/components/ListaDeCompras"
 
+export default function About() {
+  return (
+    <div>
+      {/* <NavBar label1="Produtos" label2="Adminitradores" label3="Time"/>
+      <h1>Sobre nós</h1>
+      <p>Informações sobre a empresa ...</p> */}
 
-export default function About(){
+      {/* <Counter initial={0}/> */}
 
-    return(
-        <div>
-            {/* <NavBar label1="Produtos" label2="Adminitradores" label3="Time"/>
-            <h1>Sobre nós</h1>
-            <p>Informações sobre a empresa ...</p> */}
-
-            {/* <Counter initial={0}/> */}
-
-            {/* <EffectCounter></EffectCounter> */}
-            {/* <MIniDisplay></MIniDisplay> */}
-            {/* <ButtonLike></ButtonLike> */}
-            <ButtonMusic></ButtonMusic>
-        </div>
-    )
+      {/* <EffectCounter></EffectCounter> */}
+      {/* <MIniDisplay></MIniDisplay> */}
+      {/* <ButtonLike></ButtonLike> */}
+      {/* <ButtonMusic></ButtonMusic> */}
+      <ListaDeCompras />
+    </div>
+  )
 }
