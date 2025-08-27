@@ -13,8 +13,8 @@ export default function ListaDeCompras() {
   ])
 
   const comprado = (index: number) => {
-    setItens((prev) =>
-      prev.map((item, i) =>
+    setItens((item) =>
+      item.map((item, i) =>
         i === index ? { ...item, comprado: !item.comprado } : item
       )
     )
